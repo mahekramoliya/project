@@ -1,0 +1,130 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <h2>{{user}}</h2>
+    <table border="1">
+        <tr>
+            <td>Id</td>
+            <td>added by</td>
+            <td>name</td>
+            <td>email</td>
+            <td>password</td>
+            <td>Contact</td>
+            <td>City</td>
+            <td>Gender</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>
+
+        {% for row in obj %}
+
+        <tr>
+            <td>{{row.id}}</td>
+            <td>{{row.add_by}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.password}}</td>
+            <td>{{row.Contact}}</td>
+            <td>{{row.City}}</td>
+            <td>{{row.Gender}}</td>
+            <td><a href="/delete-data/{{row.id}}">Delete</a></td>
+            <td><a href="/edit-data/{{row.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/logout">Log Out</a>
+    <a href="/edit-pro/{{id}}">Edite_pro</a>
+    <a href="/contact_add">Add contact</a>
+</body>
+</html> -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Table 06</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}" /> -->
+    <link rel="stylesheet" href="../../static/css/style.css" />
+  </head>
+  <body>
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center mb-4">
+            <h1>Welcome</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>{{user}}</h2>
+            <div class="table-wrap">
+              <table class="table">
+                <thead class="thead-primary">
+                  <tr>
+                    <td>Id</td>
+                    <td>added by</td>
+                    <td>name</td>
+                    <td>email</td>
+                    <td>password</td>
+                    <td>Contact</td>
+                    <td>City</td>
+                    <td>Gender</td>
+                    <td>Delete</td>
+                    <td>Update</td>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {% for row in obj %}
+                  <tr class="alert" role="alert">
+                    <td>{{row.id}}</td>
+                    <td>{{row.add_by}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.email}}</td>
+                    <td>{{row.password}}</td>
+                    <td>{{row.Contact}}</td>
+                    <td>{{row.City}}</td>
+                    <td>{{row.Gender}}</td>
+                    <td><a href="/delete-data/{{row.id}}">Delete</a></td>
+                    <td><a href="/edit-data/{{row.id}}">Edit</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              <a href="/logout">Log Out</a>
+              <a href="/edit-pro/{{id}}">Edite_pro</a>
+              <a href="/contact_add">Add contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
